@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "description": "Rules-first prompt format optimizer",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm --filter @tokentrail/cli dev",

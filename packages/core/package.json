@@ -2,6 +2,7 @@
   "name": "@tokentrail/core",
   "version": "0.1.0",
   "description": "TokenTrail comparison engine and recommendation layer",
+  "license": "UNLICENSED",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

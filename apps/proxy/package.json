@@ -2,6 +2,7 @@
   "name": "@tokentrail/proxy",
   "version": "0.1.0",
   "description": "TokenTrail HTTP proxy for Claude CLI, Cursor CLI, and Anthropic-compatible agents",
+  "license": "UNLICENSED",
   "type": "module",
   "private": true,
   "main": "./dist/index.js",

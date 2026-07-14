@@ -2,6 +2,7 @@
   "name": "@tokentrail/mcp",
   "version": "0.1.0",
   "description": "TokenTrail MCP server for Cursor IDE and Claude Desktop",
+  "license": "UNLICENSED",
   "type": "module",
   "private": true,
   "bin": {

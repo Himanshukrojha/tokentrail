@@ -97,3 +97,7 @@ tokentrail/
 ## Obsidian
 
 Open `obsidian/` as a vault in Obsidian. Start at **TokenTrail.md**.
+
+## License
+
+Proprietary — see [LICENSE](LICENSE). Source may be viewed for **evaluation only**. Commercial or production use, redistribution, modification, or incorporation into other projects requires prior written permission from Himanshu Ojha ([ojhimanshu@gmail.com](mailto:ojhimanshu@gmail.com)).

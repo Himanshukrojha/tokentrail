@@ -2,6 +2,7 @@
   "name": "@tokentrail/benchmark",
   "version": "0.1.0",
   "description": "TokenTrail benchmark runner",
+  "license": "UNLICENSED",
   "type": "module",
   "private": true,
   "scripts": {
