@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "layouts": [
+    {
+      "id": "safe-98-512",
+      "fidelityTarget": 0.98,
+      "label": "98% safe (16px, 512w)",
+      "width": 512,
+      "fontSize": 16,
+      "lineHeight": 1.5,
+      "charsPerLine": 55,
+      "lines": 24,
+      "padding": 32
+    },
+    {
+      "id": "safe-98-768",
+      "fidelityTarget": 0.98,
+      "label": "98% safe (14px, 768w)",
+      "width": 768,
+      "fontSize": 14,
+      "lineHeight": 1.4,
+      "charsPerLine": 68,
+      "lines": 42,
+      "padding": 32
+    },
+    {
+      "id": "agent-97-1928",
+      "fidelityTarget": 0.97,
+      "label": "97% agent dense (1928w)",
+      "width": 1928,
+      "fontSize": 11,
+      "lineHeight": 1.2,
+      "charsPerLine": 180,
+      "lines": 95,
+      "padding": 32
+    }
+  ]
+}

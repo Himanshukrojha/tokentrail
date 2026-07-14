@@ -1,0 +1,22 @@
+{
+  "name": "tokentrail",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Rules-first prompt format optimizer",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm --filter @tokentrail/cli dev",
+    "compare": "node apps/cli/dist/index.js compare",
+    "benchmark": "pnpm --filter @tokentrail/benchmark start",
+    "proxy": "node apps/proxy/dist/start.js",
+    "proxy:dev": "pnpm --filter @tokentrail/proxy start",
+    "setup": "node apps/cli/dist/index.js setup",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r exec rm -rf dist"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

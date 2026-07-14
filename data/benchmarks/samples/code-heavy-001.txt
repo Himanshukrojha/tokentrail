@@ -1,0 +1,18 @@
+You are a senior TypeScript engineer working in a monorepo.
+
+Rules:
+- Preserve exact import paths like `@tokentrail/core` and `/src/api/handler.ts`
+- Never rename exported symbols: `comparePrompt`, `buildComparisonContext`
+- Follow existing module boundaries
+
+```typescript
+export function comparePrompt(input: CompareInput): Promise<CompareResult> {
+  const prompt = ingestPrompt(input.prompt);
+  const textTokens = estimateTextTokens(prompt);
+  return buildResult(prompt, textTokens);
+}
+```
+
+When editing files under `packages/core/src/`, run `pnpm test` before committing.
+
+UUID example that must not be OCR-garbled: 8f3c2e1a-9b4d-4c6e-a1f2-3d4e5f6a7b8c

@@ -1,0 +1,3 @@
+{"id":"bench-001","category":"code_heavy","promptFile":"samples/code-heavy-001.txt","reuseCount":1,"humanLabel":"text_preferred","notes":"TypeScript block and exact file paths must stay precise"}
+{"id":"bench-002","category":"layout_heavy","promptFile":"samples/layout-heavy-001.txt","reuseCount":1,"humanLabel":"image_viable","notes":"ASCII table compresses well visually"}
+{"id":"bench-003","category":"repeated_system","promptFile":"samples/repeated-system-001.txt","reuseCount":10,"contextRole":"system","contentDensity":"prose","humanLabel":"caching_preferred","notes":"Large system prompt reused every session"}

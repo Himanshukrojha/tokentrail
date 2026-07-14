@@ -1,0 +1,21 @@
+{
+  "reuseCount": 10,
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a coding agent. Follow repository conventions and run tests."
+    },
+    {
+      "role": "user",
+      "content": "Please fix the failing payment test."
+    },
+    {
+      "role": "assistant",
+      "content": "I will inspect the payment module and run the test suite."
+    },
+    {
+      "role": "user",
+      "content": "{\"stdout\":\"log line 1\\nlog line 2\",\"stderr\":\"\",\"exitCode\":0,\"files\":[\"src/payment.ts\",\"tests/payment.test.ts\"]}"
+    }
+  ]
+}

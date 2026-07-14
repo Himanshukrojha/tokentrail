@@ -1,0 +1,9 @@
+node_modules/
+dist/
+data/runs/*.jsonl
+data/runs/proxy/
+data/runs/test-render/
+out/
+*.db
+.env
+.DS_Store

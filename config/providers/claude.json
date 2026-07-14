@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "provider": "claude",
+  "patchSize": 28,
+  "resolutionTiers": {
+    "standard": {
+      "maxLongEdge": 1568,
+      "maxVisualTokens": 1568
+    },
+    "high": {
+      "maxLongEdge": 2576,
+      "maxVisualTokens": 4784
+    }
+  },
+  "models": {
+    "claude-sonnet-4": {
+      "resolutionTier": "standard",
+      "textTokenizer": "cl100k_base"
+    },
+    "claude-3-5-sonnet": {
+      "resolutionTier": "standard",
+      "textTokenizer": "cl100k_base"
+    },
+    "claude-sonnet-5": {
+      "resolutionTier": "high",
+      "textTokenizer": "cl100k_base"
+    },
+    "claude-opus-4": {
+      "resolutionTier": "high",
+      "textTokenizer": "cl100k_base"
+    }
+  },
+  "cache": {
+    "readDiscount": 0.9,
+    "writeMultiplier": 1.25
+  },
+  "contextImaging": {
+    "minDenseCharsForContextImage": 6000,
+    "minDenseTokensForContextImage": 4000,
+    "minContextSavingsPercent": 0.3,
+    "recentTurnsKeepText": 2
+  }
+}

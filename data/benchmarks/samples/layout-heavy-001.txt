@@ -1,0 +1,15 @@
+Deployment status dashboard (read-only reference)
+
+┌────────────┬──────────┬─────────┬──────────┐
+│ Service    │ Region   │ Status  │ Version  │
+├────────────┼──────────┼─────────┼──────────┤
+│ api-gateway│ us-east-1│ healthy │ v2.14.0  │
+│ worker     │ us-east-1│ degraded│ v2.13.2  │
+│ indexer    │ eu-west-1│ healthy │ v1.8.4   │
+└────────────┴──────────┴─────────┴──────────┘
+
+Legend:
+- healthy  = all probes passing
+- degraded = elevated latency, no hard outage
+
+Use this table layout as visual context only. Operational decisions should still cite exact service names and versions from the table above.

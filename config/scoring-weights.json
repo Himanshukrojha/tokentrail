@@ -1,0 +1,9 @@
+{
+  "version": "0.1.0",
+  "weights": {
+    "cost": 0.35,
+    "readability": 0.25,
+    "fidelity": 0.3,
+    "reuse": 0.1
+  }
+}

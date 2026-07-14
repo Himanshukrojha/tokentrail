@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "thresholds": {
+    "minTokensForCache": 1024,
+    "minReuseCountForCache": 3,
+    "minCostSavingsForImage": 0.15,
+    "minReadabilityForImage": 0.7,
+    "minReadabilityForHybrid": 0.6,
+    "maxFidelityRiskForImage": 0.4,
+    "maxFidelityRiskForHybrid": 0.5,
+    "hardFidelityGate": 0.6,
+    "codeBlockRatioGate": 0.25,
+    "minTokensForImage": 512,
+    "minContextSavingsForImage": 0.3,
+    "minDenseCharsForContextImage": 6000
+  },
+  "labels": {
+    "text_preferred": "Text preferred",
+    "image_viable": "Image viable",
+    "caching_preferred": "Caching preferred",
+    "hybrid": "Hybrid strategy",
+    "context_image_preferred": "Context image preferred"
+  },
+  "contextRoleLabels": {
+    "keep_text": "Keep as text",
+    "image_context": "Image this context block",
+    "cache_context": "Cache this context block",
+    "hybrid_context": "Hybrid: text head + image tail"
+  }
+}

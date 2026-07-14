@@ -1,0 +1,1 @@
+{"type":"result","subtype":"success","is_error":false,"duration_ms":5485,"duration_api_ms":5485,"result":"Reading the requested file.\n\n\nDONE.","session_id":"ee4931db-1e5d-401c-ace8-cb8eb5431e90","request_id":"7f964e14-e4e9-4d42-824e-eddd0b85d6ef","usage":{"inputTokens":13254,"outputTokens":95,"cacheReadTokens":16320,"cacheWriteTokens":0}}
