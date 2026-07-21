@@ -22,13 +22,14 @@ export async function installToHome(
   targetRoot = getDefaultHomeDir(),
 ): Promise<string> {
   await mkdir(path.join(targetRoot, "config", "providers"), { recursive: true });
-  await mkdir(path.join(targetRoot, "data", "runs"), { recursive: true });
+  await mkdir(path.join(targetRoot, "data", "runs", "usage"), { recursive: true });
   await mkdir(path.join(targetRoot, "data", "benchmarks", "samples"), { recursive: true });
 
   const files = [
     "config/rules.json",
     "config/scoring-weights.json",
     "config/fidelity-layouts.json",
+    "config/pricing.json",
     "config/providers/claude.json",
   ];
 
@@ -100,10 +101,12 @@ export async function runSetup(options: SetupOptions = {}): Promise<void> {
   console.log("  pnpm link --global --filter @tokentrail/cli");
   console.log("");
   console.log("Then use anywhere:");
-  console.log("  tokentrail compare my-prompt.txt");
-  console.log("  tokentrail agent analyze agent-request");
+  console.log("  tokentrail optimize large-log.txt --out ./optimized --task large-log");
+  console.log("  tokentrail measure record run.json --task large-log --variant text");
+  console.log("  tokentrail measure report --task large-log");
   console.log("  tokentrail proxy");
   console.log("");
   console.log("In Cursor Agent chat, ask:");
-  console.log('  "Use tokentrail_compare on this tool output"');
+  console.log('  "Use tokentrail_optimize on this tool output"');
+  console.log('  "Record usage with tokentrail_measure_record"');
 }

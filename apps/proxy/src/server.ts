@@ -3,6 +3,7 @@ import { Readable } from "node:stream";
 
 import { AGENT_SETUP, loadProxyConfig } from "./config.js";
 import { transformAnthropicRequest, stats } from "./transform.js";
+import { logProxyUsage } from "./usage-log.js";
 import type { AnthropicMessagesRequest } from "./anthropic.js";
 
 async function readBody(req: http.IncomingMessage): Promise<string> {
@@ -50,6 +51,14 @@ async function proxyRequest(
   }
 
   let outboundBody = bodyText;
+  let transformMeta:
+    | {
+        originalTokens: number;
+        projectedTokens: number;
+        transformed: boolean;
+        model?: string;
+      }
+    | undefined;
 
   if (
     config.enabled &&
@@ -65,6 +74,12 @@ async function proxyRequest(
         agent,
       );
       outboundBody = JSON.stringify(body);
+      transformMeta = {
+        originalTokens: transform.originalTokens,
+        projectedTokens: transform.projectedTokens,
+        transformed: transform.blocks.some((b) => b.transformed),
+        model: body.model,
+      };
 
       const transformedBlocks = transform.blocks.filter((b) => b.transformed);
       if (transformedBlocks.length > 0) {
@@ -87,6 +102,29 @@ async function proxyRequest(
     headers,
     body: outboundBody || undefined,
   });
+
+  const contentType = upstream.headers.get("content-type") ?? "";
+  const isJson = contentType.includes("application/json");
+
+  if (isJson && upstream.body) {
+    const responseBuffer = Buffer.from(await upstream.arrayBuffer());
+    try {
+      await logProxyUsage({
+        model: transformMeta?.model,
+        agent,
+        bodyText: responseBuffer.toString("utf8"),
+        estimatedInputTokens: transformMeta?.originalTokens,
+        projectedInputTokens: transformMeta?.projectedTokens,
+        transformed: transformMeta?.transformed ?? false,
+      });
+    } catch (error) {
+      console.error("[tokentrail] usage log failed:", error);
+    }
+
+    res.writeHead(upstream.status, Object.fromEntries(upstream.headers.entries()));
+    res.end(responseBuffer);
+    return;
+  }
 
   res.writeHead(upstream.status, Object.fromEntries(upstream.headers.entries()));
   if (upstream.body) {

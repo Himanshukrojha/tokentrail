@@ -16,7 +16,9 @@ pnpm link --global --filter @tokentrail/cli
 Then use from **any directory**:
 
 ```bash
-tokentrail compare layout-heavy
+tokentrail optimize large-log.txt --out ./optimized --task large-log
+tokentrail measure record run.json --task large-log --variant text
+tokentrail measure report --task large-log
 tokentrail agent analyze agent-request
 tokentrail proxy
 ```
@@ -56,10 +58,8 @@ pnpm compare data/benchmarks/samples/repeated-system-001.txt --reuse 10
 | Surface | Status | Usage |
 | ------- | ------ | ----- |
 | `@tokentrail/core` | ✅ | `import { comparePrompt, renderPromptToPng }` |
-| `tokentrail` CLI | ✅ | `tokentrail compare file.txt --render-out ./out` |
-| Benchmark runner | ✅ | `tokentrail benchmark` |
-| **Agent proxy** | ✅ | `tokentrail proxy` — Claude CLI via `ANTHROPIC_BASE_URL` |
-| **Cursor MCP** | ✅ | `tokentrail setup` — Gmail login Cursor Agent |
+| `tokentrail` CLI | ✅ | `optimize`, `measure record/report`, `proxy` |
+| **Cursor MCP** | ✅ | `tokentrail_optimize`, `tokentrail_measure_record` |
 | VS Code extension | 🔜 | Editor panel |
 
 ## Project structure
@@ -80,8 +80,8 @@ tokentrail/
 
 | Doc | Purpose |
 | --- | ------- |
-| `docs/cursor-ide-setup.md` | Global CLI + Cursor MCP setup |
-| `docs/agent-cli-setup.md` | Claude CLI proxy setup |
+| `docs/unified-surfaces.md` | CLI + MCP + IDE — actual tokens & cost |
+| `docs/optimize-workflow.md` | Local optimize — no MCP token cost |
 | `docs/api.md` | `comparePrompt` API + rule IDs |
 | `docs/prompt-format-optimizer-roadmap.md` | Full product roadmap |
 | `obsidian/TokenTrail.md` | Obsidian vault home |

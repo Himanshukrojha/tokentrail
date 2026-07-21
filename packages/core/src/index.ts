@@ -1,4 +1,14 @@
 export { comparePrompt } from "./compare-prompt.js";
+export { optimizePrompt } from "./optimize-prompt.js";
+export {
+  recordUsage,
+  recordUsageFromJsonFile,
+  loadUsageRecords,
+  generateUsageReport,
+  parseUsagePayload,
+  computeUsageCost,
+  loadPricingConfig,
+} from "./usage/index.js";
 export { classifyPrompt } from "./classify/index.js";
 export { ingestPrompt } from "./ingest/index.js";
 export { applyRecommendationRules } from "./recommend/index.js";
@@ -37,6 +47,21 @@ export type {
   RenderOutput,
   RenderedPngPage,
 } from "./types.js";
+export type {
+  OptimizeInput,
+  OptimizeResult,
+  OptimizeAction,
+} from "./optimize-prompt.js";
+export type {
+  TokenUsage,
+  UsageCost,
+  UsageRecord,
+  UsageReport,
+  UsageReportRow,
+  UsageVariant,
+  UsageSurface,
+  RecordUsageInput,
+} from "./usage/index.js";
 export type {
   RenderPngOptions,
   RenderPngResult,

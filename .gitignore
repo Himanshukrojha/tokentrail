@@ -4,6 +4,8 @@ data/runs/*.jsonl
 data/runs/proxy/
 data/runs/test-render/
 out/
+.tmp-optimize-test/
+test-results/optimized-*/
 *.db
 .env
 .DS_Store

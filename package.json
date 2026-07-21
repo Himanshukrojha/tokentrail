@@ -12,6 +12,8 @@
     "proxy": "node apps/proxy/dist/start.js",
     "proxy:dev": "pnpm --filter @tokentrail/proxy start",
     "setup": "node apps/cli/dist/index.js setup",
+    "optimize": "node apps/cli/dist/index.js optimize",
+    "measure": "node apps/cli/dist/index.js measure",
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "clean": "pnpm -r exec rm -rf dist"

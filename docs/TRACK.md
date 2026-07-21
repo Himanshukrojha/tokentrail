@@ -87,7 +87,9 @@ Master step-by-step log for the project. Update this file when any step complete
 | 5.2 Agent CLI setup guide | ✅ | `docs/agent-cli-setup.md` |
 | 5.3 In-memory PNG buffers | ✅ | `packages/core/src/render/buffer.ts` |
 | 5.4 MCP tools + global setup | ✅ | `docs/cursor-ide-setup.md` |
-| 5.5 Expand benchmark corpus | 🔜 | `data/benchmarks/` |
+| 5.5 Local `optimize` command | ✅ | `docs/optimize-workflow.md` |
+| 5.6 Usage + cost tracking (`measure`) | ✅ | `docs/unified-surfaces.md` |
+| 5.7 Expand benchmark corpus | 🔜 | `data/benchmarks/` |
 
 ## Phase 6 — Distribution (next)
 
